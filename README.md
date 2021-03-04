@@ -1,7 +1,6 @@
 # SpeechToText
 
-Listens for words in background and saves text to SQLite database.
-
+Listens for words in background and saves text to SQLite database.  
 Optional Flask server to view the most uttered words.
 
 ## Requirements
@@ -12,12 +11,9 @@ Optional Flask server to view the most uttered words.
  - **[Flask](https://palletsprojects.com/p/flask/)** - `pip install Flask`
 
 ## Usage
-Change [device_index](https://pypi.org/project/SpeechRecognition/1.0.0/#microphone-device-index-none) in main.py to your microphone device.
-
-Run main.py
-
-Run app.py
-
+Change [device_index](https://pypi.org/project/SpeechRecognition/1.0.0/#microphone-device-index-none) in main.py to your microphone device.  
+Run main.py  
+Run app.py  
 Speak into mic and view words at [your_ip]:5000
 
 ## Configuration
