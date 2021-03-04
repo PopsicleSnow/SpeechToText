@@ -14,7 +14,7 @@ Optional Flask server to view the most uttered words.
 Change [device_index](https://pypi.org/project/SpeechRecognition/1.0.0/#microphone-device-index-none) in main.py to your microphone device.  
 Run main.py  
 Run app.py  
-Speak into mic and view words at [your_ip]:5000
+Speak into mic and view words at [\[your_ip\]:5000](https://flask.palletsprojects.com/en/1.1.x/quickstart/#public-server)
 
 ## Configuration
 See the [SpeechRecognition docs](https://github.com/Uberi/speech_recognition#readme) and the [Reference guide](https://pypi.org/project/SpeechRecognition/1.0.0/#reference) for configuration.
