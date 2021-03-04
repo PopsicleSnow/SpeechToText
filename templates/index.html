@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Words</title>
+</head>
+
+<body>
+    <script>
+    window.onload = function () {
+    var top = {{ top | safe }};
+    console.log(top);
+    
+    function sortByValue(jsObj){
+        var sortedArray = [];
+        for(var i in jsObj)
+        {
+            // Push each JSON Object entry in array by [value, key]
+            sortedArray.push([jsObj[i], i]);
+        }
+        return sortedArray.sort();
+    }
+    
+    console.log(sortByValue(top)); 
+
+    // Function to get the nth key from the object
+    Object.prototype.getByIndex = function(index) {
+        return this[Object.keys(this)[index]];
+    };
+    
+    console.log(Object.keys(top)[0]);
+    console.log(top.getByIndex(0));
+    
+    // Log function to make the snippet possible
+    function log(x) {
+        var d = document.createElement("div");
+        if (typeof x === "object") {
+            x = JSON.stringify(x, null, 4);
+        }
+        d.textContent= x;
+        document.body.appendChild(d);
+    }
+
+    var chart = new CanvasJS.Chart("chartContainer", {
+        animationEnabled: true,
+        
+        title:{
+            text:"Word Usage"
+        },
+        axisX:{
+            interval: 1
+        },
+        data: [{
+            type: "bar",
+            name: "words",
+            axisYType: "secondary",
+            color: "#014D65",
+            dataPoints: [
+                { y: top.getByIndex(5), label: Object.keys(top)[5] },
+                { y: top.getByIndex(4), label: Object.keys(top)[4] },
+                { y: top.getByIndex(3), label: Object.keys(top)[3] },
+                { y: top.getByIndex(2), label: Object.keys(top)[2] },
+                { y: top.getByIndex(1), label: Object.keys(top)[1] },
+                { y: top.getByIndex(0), label: Object.keys(top)[0] }
+            ]
+        }]
+    });
+    chart.render();
+
+    }
+    </script>
+    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+
+</html>
