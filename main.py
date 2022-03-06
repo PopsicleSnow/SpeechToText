@@ -36,7 +36,7 @@ def callback(recognizer, audio):
 # obtain audio from the microphone
 r = sr.Recognizer()
 r.dynamic_energy_threshold = False
-mic = sr.Microphone(device_index=1) # change device_index to your device
+mic = sr.Microphone(device_index=None) # change device_index to your device
 
 with mic as source: 
     r.adjust_for_ambient_noise(source)

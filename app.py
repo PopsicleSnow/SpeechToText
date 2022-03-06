@@ -15,4 +15,4 @@ def home():
     return render_template("index.html", top = top)
     
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0') # remove "host='0.0.0.0'" to run server on 127.0.0.1
+    app.run(debug=True) # remove "host='0.0.0.0'" to run server on 127.0.0.1
